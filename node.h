@@ -17,7 +17,7 @@ typedef struct node Node;
 typedef struct node* NodePtr;
 
 void push(NodePtr *top, int x){
-Node *new_node=(NodePtr)malloc(Sizof(NODE));
+ NodePtr new_node=(NodePtr)malloc(sizeof(Node));
   if(new_node){
 	  new_node->data=x;
  	  new_node-> nextPtr=*top;
@@ -25,6 +25,17 @@ Node *new_node=(NodePtr)malloc(Sizof(NODE));
    }
 }
 
-int pop(NodePtr* top);
+int pop(NodePtr *top){
+ 	   NodePtr t =*top;
+      if(t){ 
+       int value= t->data;// (*top)->data
+       *top=t->nextPtr;// (*top)->nexPtr
+       free(t); 
+	   return value;
+      }
+      printf("Empty Stack");
+      return 0;
+	}
+
 
 #endif

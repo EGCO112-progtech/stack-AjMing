@@ -9,15 +9,15 @@ int pop(NodePtr* top);
 int main(int argc, char **argv){
   
   int i,N,j;
-  NodePtr *top=NULL;
-  
-  push(&top,5);
-  printf("%d\n",pop(&top));
-  push(&top,7);
-  push(&top,8);
-   printf("%d\n",pop(&top));
-   printf("%d\n",pop(&top));
-   printf("%d\n",pop(&top));
+  NodePtr top=NULL;
+   
+   for(i=1;i<argc;i++){
+     push(&top,atoi(argv[i]));
+   }
+
+   while(top){
+     printf("%d\n",pop(&top));
+   }
 
 
  
