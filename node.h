@@ -15,7 +15,7 @@ struct node
 
 typedef struct node Node;
 typedef struct node* NodePtr;
-
+/*
 void push(NodePtr *top, int x){
  NodePtr new_node=(NodePtr)malloc(sizeof(Node));
   if(new_node){
@@ -37,5 +37,5 @@ int pop(NodePtr *top){
       return 0;
 	}
 
-
+*/
 #endif

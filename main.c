@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-#include "node.h"
+#include "stack.h"
 /*
 void push(NodePtr* top, int x);
 int pop(NodePtr* top);
@@ -9,15 +9,17 @@ int pop(NodePtr* top);
 int main(int argc, char **argv){
   
   int i,N,j;
-  NodePtr top=NULL;
+  Stack s;
+  s.top=NULL;
+  s.size=0;
    
    for(i=1;i<argc;i++){
-     push(&top,atoi(argv[i]));
+     push(&s,atoi(argv[i]));
    }
 
-   while(top){
-     printf("%d\n",pop(&top));
-   }
+   pop_all(&s);
+
+   
 
 
  
